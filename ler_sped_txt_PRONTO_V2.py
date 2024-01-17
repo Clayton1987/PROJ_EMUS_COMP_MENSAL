@@ -8,11 +8,11 @@ from tkinter import filedialog , messagebox
 
 df_sped = pd.DataFrame()
 df_sped2 = pd.DataFrame()
-df_NFP = pd.read_csv(r'ARQ\ConsultaNFP2.csv', sep=';', encoding='utf-8')
+#df_NFP = pd.read_csv(r'ARQ\ConsultaNFP2.csv', sep=';', encoding='utf-8')
 lst_sped = []
 lst_df = []
-tip_block = 'C100'
-mes = 'MATRIZ_MES_12'
+tip_block = 'D100'
+mes = 'MATRIZ_2019A2023'
 
 
 def ler_arq_sped(arq_txt):
@@ -102,7 +102,7 @@ print(df_sped2[:10])
 df_sped = df_sped[0].str.split('|', expand=True)
 # #df_sped = df['Local'].str.split('|', expand=True)
 print(df_sped[:10])
-print(df_NFP[:10])
+#print(df_NFP[:10])
 # print(df_sped.info())
 # ### Salvando Excel
 #df_sped.to_excel('ARQ_SPED.xlsx', sheet_name='SPEDS')
