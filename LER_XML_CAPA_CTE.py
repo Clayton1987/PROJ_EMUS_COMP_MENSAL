@@ -2,7 +2,7 @@ import pandas as pd
 import xmltodict
 from tkinter import filedialog , messagebox
 from datetime import datetime
-from tqdm import tqdm
+#from tqdm import tqdm
 
 ####   Importar produtos excel   ###
 # lst_prod_sist = pd.read_excel(r'arquivos/AGRELI_ANALISE.xlsx', sheet_name='EFAPRODU')
@@ -156,11 +156,11 @@ import os   #pathlib
 pasta_arqs = filedialog.askdirectory()
 print(pasta_arqs)
 lista_arquivos = os.listdir(pasta_arqs)
-pbar = tqdm(total=len(lista_arquivos), position=0, leave=True)
+#pbar = tqdm(total=len(lista_arquivos), position=0, leave=True)
 
 resposta_dfinal = pd.DataFrame()
 for arquivo in lista_arquivos:
-    pbar.update()
+    #pbar.update()
     if '.xml' in arquivo:
 
         print('passo arquivo')
