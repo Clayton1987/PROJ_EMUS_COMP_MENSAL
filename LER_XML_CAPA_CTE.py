@@ -44,6 +44,10 @@ def ler_xml_nota(nota):
         except:
             rem_cnpj_cte = info_cte['rem']['CPF']
         remet_nome_cte = info_cte['rem']['xNome']
+        c_munin_cte = info_cte['ide']['cMunIni']
+        n_munin_cte = info_cte['ide']['xMunIni']
+        c_munfim_cte = info_cte['ide']['cMunFim']
+        n_munfim_cte = info_cte['ide']['xMunFim']
         total_serv_cte = info_cte['vPrest']['vTPrest'].replace('.',',')
 
         try:
@@ -123,13 +127,17 @@ def ler_xml_nota(nota):
             'emit_nome_cte': emit_nome_cte,
             'rem_cnpj_cte': rem_cnpj_cte,
             'remet_nome_cte': remet_nome_cte,
+            'c_munin_cte': c_munin_cte,
+            'n_munin_cte': n_munin_cte,
+            'c_munfim_cte': c_munfim_cte,
+            'n_munfim_cte': n_munfim_cte,
             'nfe_chave_cte': nfe_chave_cte,
 
         }
 
         #### Lista
         ctes_lst = [num_cte, dat_cte, cfop_cte, cst_cte, total_serv_cte, bcicms_cte,  icms_aliq_cte, icms_valor_cte, chave_cte,
-                    natop_cte, emit_cnpj_cte, emit_nome_cte, rem_cnpj_cte, remet_nome_cte, nfe_chave_cte]
+                    natop_cte, emit_cnpj_cte, emit_nome_cte, rem_cnpj_cte, remet_nome_cte, c_munin_cte, n_munin_cte, c_munfim_cte, n_munfim_cte, nfe_chave_cte]
         ctes_xml.append(ctes_lst)
         lst_resp_ctes.append(dict_resp_cte)
 
