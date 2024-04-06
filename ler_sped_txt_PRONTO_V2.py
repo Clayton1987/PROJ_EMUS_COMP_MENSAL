@@ -11,8 +11,8 @@ df_sped2 = pd.DataFrame()
 #df_NFP = pd.read_csv(r'ARQ\ConsultaNFP2.csv', sep=';', encoding='utf-8')
 lst_sped = []
 lst_df = []
-tip_block = 'D100'
-mes = 'MATRIZ_2019A2023'
+tip_block = 'C100'
+mes = '02_2024'
 
 
 def ler_arq_sped(arq_txt):

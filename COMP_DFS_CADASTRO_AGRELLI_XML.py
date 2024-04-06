@@ -12,12 +12,15 @@ import datetime
 
 ###LENDO ARQUIVO CADASTRO DE ITEM MENSAL
 
-df1 = pd.read_excel(r'C:\Users\CLAY\PycharmProjects\Proj_inicial\ARQ\ANALISE\TODOS_PRODUTOS.xlsx', sheet_name='EFAPRODU')
-df_agrelli = df1.loc[(df1['DTCUST'].dt.year == 2023) & (df1['DTCUST'].dt.month >= 11),['CODPRO','NOMPRO','CLAFIS','CEST','ALQICM','CODTRI','CODTR2','REDAGR','DTCUST','SALEST','SALDEP','REFERE','CDPRFO','TABFIX']].reset_index(drop=True)
+df1 = pd.read_excel(r'C:\Users\CLAY\PycharmProjects\Proj_inicial\ARQ\ANALISE\TODOS_PRODUTOS_08_02_2024.xlsx', sheet_name='EFAPRODU')
+df_agrelli = df1.loc[(df1['DTCUST'].dt.year == 2024) & (df1['DTCUST'].dt.month >= 1),['CODPRO','NOMPRO','CLAFIS','CEST','ALQICM','CODTRI','CODTR2','REDAGR','DTCUST','SALEST','SALDEP','REFERE','CDPRFO','TABFIX']].reset_index(drop=True)
 
+# print(df_agrelli.loc[:0])
+#
+# breakpoint()
 
 #### LENDO ARQUIVO XMLS DE NFS DO MES
-df2 = pd.read_excel(r'C:\Users\CLAY\PycharmProjects\Proj_inicial\ARQ\ANALISE\NFs_xml.xlsx')
+df2 = pd.read_excel(r'C:\Users\CLAY\PycharmProjects\Proj_inicial\ARQ\ANALISE\NFs_xml_11_02_2024.xlsx')
 df_xml = df2.drop(columns='Unnamed: 0')
 df_xml_comp = df_xml[['cod_prod_xml', 'nome_prod_xml', 'ncm_prod_xml', 'cest_prod_xml', 'orig_icms_xml', 'cst_icms_xml']].rename(columns={'cod_prod_xml': 'CDPRFO'})
 df_completa = df_agrelli.merge(df_xml_comp, on='CDPRFO')
@@ -71,5 +74,9 @@ print(df_vfinal.info())
 
 #### Salvando em Resultado Final em Excel  #####
 
-with pd.ExcelWriter(r'C:\Users\CLAY\PycharmProjects\Proj_inicial\ARQ\ANALISE_XML_CADASTRO_AGRELLI_12-2023.xlsx', mode='w') as writer:
+with pd.ExcelWriter(r'C:\Users\CLAY\PycharmProjects\Proj_inicial\ARQ\ANALISE_XML_CADASTRO_AGRELLI_01-2024V2.xlsx', mode='w') as writer:
     df_vfinal.to_excel(writer, sheet_name='ANALISE_XML_CADASTRO')
+
+####  Planlha com MERGE  TESTES
+with pd.ExcelWriter(r'C:\Users\CLAY\PycharmProjects\Proj_inicial\ARQ\ANALISE_XML_CADASTRO_COMPLETA_01-2024V2.xlsx', mode='w') as writer:
+    df_completa.to_excel(writer, sheet_name='ANALISE_XML_CADASTRO')

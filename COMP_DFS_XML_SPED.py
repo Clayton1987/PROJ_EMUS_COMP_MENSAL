@@ -11,8 +11,8 @@ import time
 #### Importando arquivos
 # df_sped = pd.read_excel(r'ARQ\ARQ_SPED_C100_MATRIZ.xlsx', sheet_name='SPEDS')
 # df_xmls = pd.read_excel(r'ARQ\NFs_xml_capa.xlsx', sheet_name='XMLs')
-df_sped = pd.read_excel(r'C:\Users\CLAY\Documents\EMUSA\SPED_MATRIZ_2019_2023\12-2023\ARQ_MATRIZ_MES_12_SPED-C100.xlsx', sheet_name='C100')
-df_xmls = pd.read_excel(r'C:\Users\CLAY\Documents\EMUSA\MATRIZ_XML_NF_2019_2023\NFs_xml_capa_FILIAL_2021_01-2024_160124.xlsx', sheet_name='XMLs')
+df_sped = pd.read_excel(r'C:\Users\CLAY\Documents\EMUSA\SPED_FILIAL_2021_2023\02-2024\ARQ_02_2024_SPED-C100.xlsx', sheet_name='C100')
+df_xmls = pd.read_excel(r'C:\Users\CLAY\Documents\EMUSA\FILIAL_XML_NF_2021_2023\NFs_xml_capa_FILIAL_2021_02-2024_unido.xlsx', sheet_name='XMLs')
 
 ######    Limpar colunas Importantes VAZIASSS    #######
 df_sped.dropna(subset=[9, 10, 11])
@@ -90,7 +90,7 @@ print(df_xml_sped.info())
 
 #### Salvando em Resultado Final em Excel  #####
 
-with pd.ExcelWriter(r'C:\Users\CLAY\Documents\EMUSA\ANALISE_SPED_XML_ICMS_160124.xlsx', mode='w') as writer:
+with pd.ExcelWriter(r'C:\Users\CLAY\Documents\EMUSA\ANALISE_SPED_XML_ICMS_FILIAL_02-2024_16032024.xlsx', mode='w') as writer:
     df_xml_sped.to_excel(writer, sheet_name='ANALISE_ICMS')
 
 

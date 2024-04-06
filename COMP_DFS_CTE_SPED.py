@@ -13,8 +13,8 @@ import time
 # df_xmls = pd.read_excel(r'ARQ\NFs_xml_capa.xlsx', sheet_name='XMLs')
 # df_sped = pd.read_excel(r'C:\Users\CLAY\Documents\EMUSA\SPED_FILIAL_2021_2023\12-2023\ARQ_SPED-D100_FILIAL_12-2023.xlsx', sheet_name='SPEDS')
 # df_xmls = pd.read_excel(r'C:\Users\CLAY\Documents\EMUSA\FILIAL_XML_NF_2021_2023\CTes-19953965000399-11-12-2023\CTEs_xml_capa.xlsx', sheet_name='CTE_XMLs')
-df_sped = pd.read_excel(r'C:\Users\CLAY\Documents\EMUSA\SPED_MATRIZ_2019_2023\ARQ_MATRIZ_2019A2023_SPED-D100_170124.xlsx', sheet_name='D100')
-df_xmls = pd.read_excel(r'C:\Users\CLAY\Documents\EMUSA\MATRIZ_XML_CTE_2019_2023\CTEs_xml_capa_01-2024_MATRIZ_160124.xlsx', sheet_name='CTE_XMLs')
+df_sped = pd.read_excel(r'C:\Users\CLAY\Documents\EMUSA\SPED_FILIAL_2021_2023\02-2024\ARQ_02_2024_SPED-D100.xlsx', sheet_name='D100')
+df_xmls = pd.read_excel(r'C:\Users\CLAY\Documents\EMUSA\FILIAL_XML_CTE_2021_2023\CTes_COMPLETO\CTEs_xml_capa_FILIAL_2021_02-2024_unido.xlsx', sheet_name='CTE_XMLs')
 
 ######    Limpar colunas Importantes VAZIASSS    #######
 df_sped.dropna(subset=[9, 10])
@@ -82,7 +82,7 @@ print(df_xml_sped.info())
 
 #### Salvando em Resultado Final em Excel  #####
 
-with pd.ExcelWriter(r'C:\Users\CLAY\Documents\EMUSA\ANALISE_SPED_CTE_ICMS_160124_MATRIZ.xlsx', mode='w') as writer:
+with pd.ExcelWriter(r'C:\Users\CLAY\Documents\EMUSA\ANALISE_SPED_CTE_ICMS_FILIAL_02-2024_16032024.xlsx', mode='w') as writer:
     df_xml_sped.to_excel(writer, sheet_name='ANALISE_ICMS_CTE')
 
 
